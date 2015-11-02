@@ -43,8 +43,11 @@ $ cp ./config.json.default config.json #复制一份配置文件
 ```
 
 ## 使用
-
-建议选择你喜欢的进程管理器来运行,如forever或pm2
+直接运行
+```bash
+$ node ./index.js
+```
+或者选择你喜欢的进程管理器来运行,如forever或pm2
 ```bash
 $ pm2 ./index.js
 ```
