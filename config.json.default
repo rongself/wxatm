@@ -1,0 +1,27 @@
+{
+  "wxAppId": "xxxxxxxxxxxxxxxxxxx",
+  "wxAppSecret": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "store":"memory",
+  "port": 4730,
+  "https":{
+    "enable":false,
+    "port":4740,
+    "sslCert": "./sslcert/server.crt",
+    "sslKey": "./sslcert/server.key"
+  },
+  "auth":false,
+  "apps": [
+    {
+      "appId": "UNIKEY1",
+      "appSecret": "SECRET"
+    },
+    {
+      "appId": "UNIKEY2",
+      "appSecret": "SECRET"
+    },
+    {
+      "appId": "UNIKEY3",
+      "appSecret": "SECRET"
+    }
+  ]
+}
