@@ -1,5 +1,5 @@
 ## 简介
-这个一个微信AccessToken中控服务器,用于统一管理刷新AccessToken,本程序使用Redis来储存AccessToken
+这个一个微信AccessToken中控服务器,用于统一管理刷新AccessToken
 
 ## 安装
 
