@@ -12,7 +12,13 @@ var wxAppSecret = config.wxAppSecret;
 var apps = config.apps;
 var token = new AccessToken(wxAppId,wxAppSecret,storeFactory.get(config.store || 'memory'));
 
-token.refreshToken();
+token.refreshToken().then(
+    function (data) {},
+    function (err) {
+        console.error(err);
+    }
+);
+
 var Auth = {
     isValid: function (req) {
 
@@ -42,12 +48,15 @@ app.get('/access-token.json', function (req,res) {
         return res.sendStatus(401);
     }
 
-    token.getToken().then(function (data) {
-        res.json({accessToken:data});
-    }, function (err) {
-        res.sendStatus(504);
-        console.log(err);
-    });
+    token.getToken().then(
+        function (data) {
+            res.json({accessToken:data});
+        },
+        function (err) {
+            res.sendStatus(504);
+            console.error(err);
+        }
+    );
 
 });
 
@@ -63,7 +72,7 @@ app.post('/refresh', function (req,res) {
         },
         function (err) {
             res.sendStatus(504);
-            console.log(err);
+            console.error(err);
         }
     );
 
