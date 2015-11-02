@@ -1,7 +1,8 @@
 {
   "name": "wxatm",
   "description": "Wechat access token manager",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "bin":{"wxatm":"./index.js"},
   "author": {
     "name": "Ron Choi",
     "email": "rongself1991@gmail.com"
@@ -11,9 +12,6 @@
     "hiredis": "^0.4.1",
     "promise": "^7.0.4",
     "redis": "^2.2.5"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.0"
   },
   "keywords": [
     "wechat",
