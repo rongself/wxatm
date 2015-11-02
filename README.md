@@ -19,7 +19,7 @@ $ cp ./config.json.default config.json #复制一份配置文件
   "store":"memory", //储存方式,有效值为memory|redis ,设置为memory时,会将accessToken存储在变量中
   "port": 4730, //HTTP端口
   "https":{
-      "enable":true, 是否使用HTTPS
+      "enable":true, //是否使用HTTPS
       "port":4740,  //HTTPS端口
       "sslCert": "./sslcert/server.crt",
       "sslKey": "./sslcert/server.key"
