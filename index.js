@@ -9,7 +9,7 @@ var storeFactory = require('./lib/store/factory');
 var app = express();
 var wxAppId = config.wxAppId;
 var wxAppSecret = config.wxAppSecret;
-var apps = config.apps;
+var apps = config.auth.apps;
 var token = new AccessToken(wxAppId,wxAppSecret,storeFactory.get(config.store || 'memory'));
 
 token.refreshToken().then(
@@ -44,7 +44,7 @@ var Auth = {
 
 app.get('/access-token.json', function (req,res) {
 
-    if (config.auth !==false && !Auth.isValid(req)) {
+    if (config.auth.enable !== false && !Auth.isValid(req)) {
         return res.sendStatus(401);
     }
 
@@ -62,7 +62,7 @@ app.get('/access-token.json', function (req,res) {
 
 app.post('/refresh', function (req,res) {
 
-    if (config.auth !==false && !Auth.isValid(req)) {
+    if (config.auth.enable !==false && !Auth.isValid(req)) {
         return res.sendStatus(401);
     }
 
